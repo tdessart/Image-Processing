@@ -1,16 +1,23 @@
-            bp = string(app.bloodpSwitch.Value)
-            if bp == "On" 
-             if app.FemaleButton.Value == true 
-                 x = [0 1] 
-                 y = [1 0] 
-             elseif app.MaleButton.Value == true 
-                 x = [0 2] 
-                 y = [2 0] 
-             end
-            else 
-                x = 0;  
-                y = 0;  
-            end 
-            x
-            y
-            scatter(app.UIAxes,x,y)
+clear all; close all; clc; 
+
+image = imread('lenagray.tif', 'tif'); 
+image = im2double(image); 
+imshow(image);
+
+[r c] = ginput(4); 
+bw = roipoly(image, r,c);
+figure; 
+imshow(bw)
+
+[R C] = size(bw); 
+for i = 1 : R 
+    for j = 1 : C 
+        if bw(i, j) == 1
+            out(i,j) = image(i, j ); 
+        else 
+            out(i, j) = 0; 
+        end
+    end
+end
+figure; 
+imshow(out, [])
