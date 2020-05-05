@@ -33,20 +33,19 @@ figure;
 imshow(bw)
 col = []; 
 [R C] = size(bw);
-out = zeros(R,C);
-keep = []; 
+out = zeros(R,C); 
 for i = 1 : R 
     for j = 1 : C 
         if bw(i, j) == 1
             out(i,j) = J(i,j); 
-            keep(end+1) = J(i,j); 
+            keep(end+1) = 
         end
     end
 end
 res = zeros(R,C); 
 for i = 1 : R 
     for j = 1 : C 
-        for k = 1 : length(keep)
+        for k = 1 : lenght(keep)
             
         if J(i,j) == keep(k)
             res(i,j) = image(i,j); 
@@ -56,7 +55,7 @@ for i = 1 : R
 end
 
 figure; 
-imshow(res, [])
+imshow(out, [])
 
 % 
 % 
