@@ -56,7 +56,7 @@ for i = 1 : R
 end
 
 figure; 
-imshow(res, [])
+imshow(out, [])
 
 % 
 % 
