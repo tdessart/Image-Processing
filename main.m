@@ -1,7 +1,7 @@
 clear all; close all; clc; 
 
-image = imread('lenagray.tif', 'tif'); 
-image = im2double(image); 
+[aind,amap] = imread('corn.tif',2); 
+% image = im2double(image); 
 % iteration = 200; 
 % k = 0.05;  
 % image  = anisodiff(image,iteration,k);
